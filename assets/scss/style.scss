@@ -1,13 +1,19 @@
-$colors: (
-  golden: #d1a954,
+$colors: (golden: #d1a954,
   gray-custom: rgba(51, 51, 51, 0.85),
 );
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @mixin header-font-style($weight, $size, $line-height) {
   font: {
     weight: $weight;
     size: $size;
   }
+
   line-height: $line-height;
 }
 
@@ -42,6 +48,7 @@ button {
     family: Open Sans Condensed;
     style: normal;
   }
+
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 0.1em;
@@ -77,6 +84,7 @@ button {
   padding: 17px 47px;
   cursor: pointer;
   transition: 0.1s;
+
   &:hover {
     background-color: white;
     color: map-get($colors, golden);
@@ -94,6 +102,7 @@ p {
     weight: normal;
     size: 14px;
   }
+
   line-height: 150%;
   color: #ffffff;
 }
@@ -118,11 +127,13 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   h3 {
     max-width: 248px;
     font-size: 18px;
     line-height: 25px;
   }
+
   .line {
     max-width: 80px;
     width: 100%;
@@ -141,6 +152,7 @@ p {
     transform: rotate(90deg);
     color: #ffffff99;
     cursor: pointer;
+
     &:last-of-type {
       color: map-get($colors, golden);
     }
@@ -156,17 +168,22 @@ header {
     size: cover;
     position: center;
   }
+
   position: relative;
+
   .header-layer {
     background: map-get($colors, gray-custom);
+
     padding: {
       top: 51px;
       bottom: 208px;
     }
+
     .nav-menu {
       display: flex;
       justify-content: space-between;
       margin-bottom: 191px;
+
       a {
         &:hover {
           padding-bottom: 5px;
@@ -176,15 +193,18 @@ header {
           transition: 0.1s;
         }
       }
+
       .menu-list {
         max-width: 824px;
         width: 100%;
         display: flex;
         justify-content: space-between;
       }
+
       .phone {
         max-width: 120px;
         width: 100%;
+
         a {
           font-size: 16px;
           line-height: 22px;
@@ -193,32 +213,41 @@ header {
         }
       }
     }
+
     .theater-title {
       display: flex;
+
       .title-container {
         max-width: 540px;
+
         margin: {
           right: 125px;
           top: 117px;
         }
+
         h1 {
           margin-bottom: 50px;
         }
+
         p {
           margin-bottom: 49px;
         }
       }
+
       .slider {
         max-width: 370px;
         width: 100%;
+
         .slider-container {
           position: relative;
           margin-bottom: 55px;
+
           .layer {
             position: absolute;
             bottom: -20px;
             right: 0px;
             z-index: 2;
+
             &::before {
               background: rgba(209, 169, 84, 0.85);
               content: "";
@@ -227,27 +256,32 @@ header {
               width: 100%;
             }
           }
-          > img {
+
+          >img {
             position: relative;
             z-index: 3;
             animation-name: slider-move;
             animation-duration: 0.3s;
             animation-timing-function: ease-out;
           }
+
           @keyframes slider-move {
             0% {
               bottom: -20px;
               right: -20px;
             }
+
             100% {
               bottom: 0px;
               right: 0px;
             }
           }
         }
+
         .slider-controls {
           display: flex;
           justify-content: space-between;
+
           .prev,
           .next {
             max-width: 108px;
@@ -264,55 +298,88 @@ header {
 
 .about-theater {
   padding: 150px 0px;
+
   h2 {
     margin-bottom: 100px;
   }
+
   .about-theater-container {
     display: flex;
     justify-content: space-between;
+
     .about-theater-item {
       &:first-of-type {
         max-width: 445px;
       }
+
       &:last-of-type {
         max-width: 225px;
+
         img {
           margin-bottom: 15px;
         }
+
         h4 {
           margin-bottom: 25px;
+
           &:last-of-type {
             margin-bottom: 0px;
           }
         }
       }
+
       h3 {
         margin-bottom: 40px;
       }
     }
   }
 }
+
 .perfomances {
   padding-left: 150px;
+
   h2 {
     margin-bottom: 100px;
   }
+
   .perfomance-gallery {
     display: flex;
+
     .gallery-item {
       position: relative;
-      cursor: pointer;
+      cursor: default;
+
       &:hover {
         .gallery-layer {
-          &::before {
-            background-color: transparent;
+          & {
+            @include flex-center();
           }
+
+          &::before {
+            content: "\f002";
+
+            font: {
+              family: "Font Awesome 5 Free";
+              size: 30px;
+              weight: 900;
+            }
+
+            cursor: pointer;
+            color: #fff;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: map-get($colors, golden);
+            @include flex-center();
+          }
+
           h3,
           h4 {
             display: none;
           }
         }
       }
+
       .gallery-layer {
         position: relative;
 
@@ -323,10 +390,12 @@ header {
           position: absolute;
           width: 100%;
         }
+
         img {
           max-width: 442px;
           width: 100%;
         }
+
         h3 {
           position: absolute;
           top: 40px;
@@ -335,12 +404,59 @@ header {
           line-height: 33px;
           letter-spacing: 0.05em;
         }
+
         h4 {
           position: absolute;
           bottom: 40px;
           left: 40px;
           font-size: 18px;
           line-height: 25px;
+        }
+      }
+    }
+  }
+}
+
+.rating {
+  padding-top: 150px;
+
+  .medium-container {
+    background: {
+      image: url(assets/images/rating-bg.png);
+      repeat: no-repeat;
+      size: cover;
+      position: center;
+    }
+
+    .rating-layer {
+      background: {
+        color: #333333E5;
+      }
+
+      padding: 126px 95px 126px 190px;
+      display: flex;
+
+      .rating-years {
+        margin-right: 103px;
+
+        h2 {
+          color: map-get($colors, golden);
+          font-size: 72px;
+          font-weight: bold;
+          line-height: 98px;
+        }
+      }
+
+      .rating-content {
+        max-width: 490px;
+
+        p {
+          font: {
+            style: normal;
+            weight: bold;
+            size: 36px;
+          }     
+          line-height: 150%;
         }
       }
     }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   box-sizing: border-box;
@@ -282,10 +283,27 @@ header .header-layer .theater-title .slider .slider-controls .next {
 }
 .perfomances .perfomance-gallery .gallery-item {
   position: relative;
-  cursor: pointer;
+  cursor: default;
+}
+.perfomances .perfomance-gallery .gallery-item:hover .gallery-layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .perfomances .perfomance-gallery .gallery-item:hover .gallery-layer::before {
-  background-color: transparent;
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-size: 30px;
+  font-weight: 900;
+  cursor: pointer;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #d1a954;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .perfomances .perfomance-gallery .gallery-item:hover .gallery-layer h3,
 .perfomances .perfomance-gallery .gallery-item:hover .gallery-layer h4 {
@@ -319,6 +337,39 @@ header .header-layer .theater-title .slider .slider-controls .next {
   left: 40px;
   font-size: 18px;
   line-height: 25px;
+}
+
+.rating {
+  padding-top: 150px;
+}
+.rating .medium-container {
+  background-image: url(assets/images/rating-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.rating .medium-container .rating-layer {
+  background-color: #333333E5;
+  padding: 126px 95px 126px 190px;
+  display: flex;
+}
+.rating .medium-container .rating-layer .rating-years {
+  margin-right: 103px;
+}
+.rating .medium-container .rating-layer .rating-years h2 {
+  color: #d1a954;
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 98px;
+}
+.rating .medium-container .rating-layer .rating-content {
+  max-width: 490px;
+}
+.rating .medium-container .rating-layer .rating-content p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 150%;
 }
 
 /*# sourceMappingURL=style.css.map */

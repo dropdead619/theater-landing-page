@@ -8,6 +8,7 @@ body {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  background: #333333;
 }
 
 .medium-container {
@@ -69,6 +70,12 @@ button {
   background-color: #d1a954;
   border: none;
   padding: 17px 47px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+button:hover {
+  background-color: white;
+  color: #d1a954;
 }
 
 span {
@@ -90,9 +97,10 @@ p {
   width: 100%;
   transform: rotate(-90deg);
   position: absolute;
-  left: -447px;
+  left: -474px;
   top: 447px;
-  padding: 64px 383px 64px 86px;
+  padding: 34px 383px 34px 86px;
+  background-color: #333333bf;
 }
 
 .contact-container {
@@ -141,13 +149,17 @@ header .header-layer {
   padding-top: 51px;
   padding-bottom: 208px;
 }
-header .header-layer .medium-container {
-  margin-left: 200px;
-}
 header .header-layer .nav-menu {
   display: flex;
   justify-content: space-between;
   margin-bottom: 191px;
+}
+header .header-layer .nav-menu a:hover {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #d1a954;
+  margin: -4px 0px;
+  cursor: pointer;
+  transition: 0.1s;
 }
 header .header-layer .nav-menu .menu-list {
   max-width: 824px;
@@ -231,7 +243,6 @@ header .header-layer .theater-title .slider .slider-controls .next {
 }
 
 .about-theater {
-  background: #333333;
   padding: 150px 0px;
 }
 .about-theater h2 {
@@ -239,6 +250,75 @@ header .header-layer .theater-title .slider .slider-controls .next {
 }
 .about-theater .about-theater-container {
   display: flex;
+  justify-content: space-between;
+}
+.about-theater .about-theater-container .about-theater-item:first-of-type {
+  max-width: 445px;
+}
+.about-theater .about-theater-container .about-theater-item:last-of-type {
+  max-width: 225px;
+}
+.about-theater .about-theater-container .about-theater-item:last-of-type img {
+  margin-bottom: 15px;
+}
+.about-theater .about-theater-container .about-theater-item:last-of-type h4 {
+  margin-bottom: 25px;
+}
+.about-theater .about-theater-container .about-theater-item:last-of-type h4:last-of-type {
+  margin-bottom: 0px;
+}
+.about-theater .about-theater-container .about-theater-item h3 {
+  margin-bottom: 40px;
+}
+
+.perfomances {
+  padding-left: 150px;
+}
+.perfomances h2 {
+  margin-bottom: 100px;
+}
+.perfomances .perfomance-gallery {
+  display: flex;
+}
+.perfomances .perfomance-gallery .gallery-item {
+  position: relative;
+  cursor: pointer;
+}
+.perfomances .perfomance-gallery .gallery-item:hover .gallery-layer::before {
+  background-color: transparent;
+}
+.perfomances .perfomance-gallery .gallery-item:hover .gallery-layer h3,
+.perfomances .perfomance-gallery .gallery-item:hover .gallery-layer h4 {
+  display: none;
+}
+.perfomances .perfomance-gallery .gallery-item .gallery-layer {
+  position: relative;
+}
+.perfomances .perfomance-gallery .gallery-item .gallery-layer::before {
+  background-color: #333333a6;
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.perfomances .perfomance-gallery .gallery-item .gallery-layer img {
+  max-width: 442px;
+  width: 100%;
+}
+.perfomances .perfomance-gallery .gallery-item .gallery-layer h3 {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: 0.05em;
+}
+.perfomances .perfomance-gallery .gallery-item .gallery-layer h4 {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  font-size: 18px;
+  line-height: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

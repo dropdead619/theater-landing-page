@@ -1,6 +1,6 @@
 $colors: (
   golden: #d1a954,
-  gray-custom: rgba(51, 51, 51, 0.85)
+  gray-custom: rgba(51, 51, 51, 0.85),
 );
 
 @mixin header-font-style($weight, $size, $line-height) {
@@ -21,6 +21,7 @@ body {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  background: #333333;
 }
 
 //Default rules
@@ -74,6 +75,12 @@ button {
   background-color: map-get($colors, golden);
   border: none;
   padding: 17px 47px;
+  cursor: pointer;
+  transition: 0.1s;
+  &:hover {
+    background-color: white;
+    color: map-get($colors, golden);
+  }
 }
 
 span {
@@ -99,9 +106,10 @@ p {
   width: 100%;
   transform: rotate(-90deg);
   position: absolute;
-  left: -447px;
+  left: -474px;
   top: 447px;
-  padding: 64px 383px 64px 86px;
+  padding: 34px 383px 34px 86px;
+  background-color: #333333bf;
 }
 
 .contact-container {
@@ -110,7 +118,6 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   h3 {
     max-width: 248px;
     font-size: 18px;
@@ -144,10 +151,10 @@ p {
 
 header {
   background: {
-   image: url(assets/images/first-screen-bg.png);
-   repeat: no-repeat;
-   size: cover;
-   position: center;
+    image: url(assets/images/first-screen-bg.png);
+    repeat: no-repeat;
+    size: cover;
+    position: center;
   }
   position: relative;
   .header-layer {
@@ -156,13 +163,19 @@ header {
       top: 51px;
       bottom: 208px;
     }
-    .medium-container {
-      margin-left: 200px;
-    }
     .nav-menu {
       display: flex;
       justify-content: space-between;
       margin-bottom: 191px;
+      a {
+        &:hover {
+          padding-bottom: 5px;
+          border-bottom: 2px solid map-get($colors, golden);
+          margin: -4px 0px;
+          cursor: pointer;
+          transition: 0.1s;
+        }
+      }
       .menu-list {
         max-width: 824px;
         width: 100%;
@@ -182,14 +195,12 @@ header {
     }
     .theater-title {
       display: flex;
-
       .title-container {
         max-width: 540px;
         margin: {
           right: 125px;
           top: 117px;
         }
-
         h1 {
           margin-bottom: 50px;
         }
@@ -252,15 +263,86 @@ header {
 }
 
 .about-theater {
-    background: #333333;
-    padding: 150px 0px;
-    h2 {
-        margin-bottom: 100px;
-    }
-    .about-theater-container {
-        display: flex;
-        .about-theater-item {
-           
+  padding: 150px 0px;
+  h2 {
+    margin-bottom: 100px;
+  }
+  .about-theater-container {
+    display: flex;
+    justify-content: space-between;
+    .about-theater-item {
+      &:first-of-type {
+        max-width: 445px;
+      }
+      &:last-of-type {
+        max-width: 225px;
+        img {
+          margin-bottom: 15px;
         }
+        h4 {
+          margin-bottom: 25px;
+          &:last-of-type {
+            margin-bottom: 0px;
+          }
+        }
+      }
+      h3 {
+        margin-bottom: 40px;
+      }
     }
+  }
+}
+.perfomances {
+  padding-left: 150px;
+  h2 {
+    margin-bottom: 100px;
+  }
+  .perfomance-gallery {
+    display: flex;
+    .gallery-item {
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        .gallery-layer {
+          &::before {
+            background-color: transparent;
+          }
+          h3,
+          h4 {
+            display: none;
+          }
+        }
+      }
+      .gallery-layer {
+        position: relative;
+
+        &::before {
+          background-color: #333333a6;
+          content: "";
+          height: 100%;
+          position: absolute;
+          width: 100%;
+        }
+        img {
+          max-width: 442px;
+          width: 100%;
+        }
+        h3 {
+          position: absolute;
+          top: 40px;
+          left: 40px;
+          font-size: 24px;
+          line-height: 33px;
+          letter-spacing: 0.05em;
+        }
+        h4 {
+          position: absolute;
+          bottom: 40px;
+          left: 40px;
+          font-size: 18px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
 }

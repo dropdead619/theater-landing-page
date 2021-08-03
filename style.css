@@ -244,7 +244,7 @@ header .header-layer .theater-title .slider .slider-controls .next {
 }
 
 .about-theater {
-  padding: 150px 0px;
+  padding: 150px 0px 75px 0px;
 }
 .about-theater h2 {
   margin-bottom: 100px;
@@ -273,7 +273,7 @@ header .header-layer .theater-title .slider .slider-controls .next {
 }
 
 .perfomances {
-  padding-left: 150px;
+  padding: 75px 0px 75px 150px;
 }
 .perfomances h2 {
   margin-bottom: 100px;
@@ -340,7 +340,7 @@ header .header-layer .theater-title .slider .slider-controls .next {
 }
 
 .rating {
-  padding-top: 150px;
+  padding: 75px 0px;
 }
 .rating .medium-container {
   background-image: url(assets/images/rating-bg.png);
@@ -349,9 +349,10 @@ header .header-layer .theater-title .slider .slider-controls .next {
   background-position: center;
 }
 .rating .medium-container .rating-layer {
-  background-color: #333333E5;
+  background-color: #333333e5;
   padding: 126px 95px 126px 190px;
   display: flex;
+  align-items: center;
 }
 .rating .medium-container .rating-layer .rating-years {
   margin-right: 103px;
@@ -365,11 +366,126 @@ header .header-layer .theater-title .slider .slider-controls .next {
 .rating .medium-container .rating-layer .rating-content {
   max-width: 490px;
 }
+.rating .medium-container .rating-layer .rating-content .rating-stars {
+  max-width: 230px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.rating .medium-container .rating-layer .rating-content .rating-stars i {
+  font-size: 26px;
+  color: #d1a954;
+}
 .rating .medium-container .rating-layer .rating-content p {
   font-style: normal;
   font-weight: bold;
   font-size: 36px;
   line-height: 150%;
+}
+
+.partners {
+  padding-top: 75px;
+}
+.partners .medium-container {
+  max-width: 1034px;
+}
+.partners .medium-container h2 {
+  margin-bottom: 100px;
+}
+.partners .medium-container .partner-logo-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.partners .medium-container .partner-logo-container img {
+  max-width: 180px;
+  width: 100%;
+  margin-left: 78px;
+  margin-bottom: 80px;
+}
+
+.become-mecenate {
+  padding: 40px 0px;
+}
+.become-mecenate .medium-container h2 {
+  margin-bottom: 100px;
+}
+.become-mecenate .medium-container .form-container {
+  display: flex;
+  justify-content: space-between;
+}
+.become-mecenate .medium-container .form-container .form-contacts {
+  max-width: 247px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.become-mecenate .medium-container .form-container .form-contacts a {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+  margin-bottom: 25px;
+}
+.become-mecenate .medium-container .form-container form {
+  max-width: 730px;
+}
+.become-mecenate .medium-container .form-container form input,
+.become-mecenate .medium-container .form-container form textarea {
+  padding: 8px 15px;
+  outline: none;
+  border: 1px solid #616161;
+  background: #444444;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  color: white;
+}
+.become-mecenate .medium-container .form-container form input::placeholder,
+.become-mecenate .medium-container .form-container form textarea::placeholder {
+  color: #989898;
+}
+.become-mecenate .medium-container .form-container form .input-fields-container {
+  display: grid;
+  margin-bottom: 40px;
+  grid-template-columns: 1fr 1fr 2fr;
+  row-gap: 30px;
+  column-gap: 30px;
+}
+.become-mecenate .medium-container .form-container form .input-fields-container textarea {
+  resize: none;
+  overflow: hidden;
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.become-mecenate .medium-container .form-container form .submit-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.become-mecenate .medium-container .form-container form .submit-button-container p {
+  max-width: 390px;
+  font-size: 12px;
+  line-height: 150%;
+  color: #989898;
+}
+
+footer {
+  padding-top: 40px;
+}
+footer .medium-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: 1px solid #565656;
+  display: flex;
+  justify-content: space-between;
+}
+footer .medium-container p {
+  font-size: 12px;
+  line-height: 150%;
+  color: #989898;
 }
 
 /*# sourceMappingURL=style.css.map */
